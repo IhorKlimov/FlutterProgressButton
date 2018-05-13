@@ -14,9 +14,12 @@ class RevealProgressButtonPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     // todo Fix this
-    // This solution is partially wrong,
-    // because final radius should use button's vertical offset in a parent in a calculation
-    var radius = 24.0 + max(_screenSize.height, _screenSize.width) * _fraction;
+    // This solution is hardcoded,
+    // because I know the exact widget position
+    var finalRadius = sqrt(pow(_screenSize.width / 2, 2) +
+        pow(_screenSize.height - 32.0 - 48.0, 2));
+    print(finalRadius);
+    var radius = 24.0 + finalRadius * _fraction;
 
     canvas.drawCircle(Offset(size.width / 2, size.height / 2), radius, paint);
   }

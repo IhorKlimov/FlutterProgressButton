@@ -38,7 +38,7 @@ class _RevealProgressButtonState extends State<RevealProgressButton>
 
   void reveal() {
     _controller = AnimationController(
-        duration: const Duration(milliseconds: 300), vsync: this);
+        duration: const Duration(milliseconds: 200), vsync: this);
     _animation = Tween(begin: 0.0, end: 1.0).animate(_controller)
       ..addListener(() {
         setState(() {
