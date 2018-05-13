@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:progress_button/home_page.dart';
+import 'package:progress_button/navigation.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  MyApp() {
+    Navigation.initPaths();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Progress Button'),
+      onGenerateRoute: Navigation.router.generator,
     );
   }
 }
