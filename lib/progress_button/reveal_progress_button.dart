@@ -19,7 +19,7 @@ class _RevealProgressButtonState extends State<RevealProgressButton>
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: RevealProgressButtonPainter(_fraction),
+      painter: RevealProgressButtonPainter(_fraction, MediaQuery.of(context).size),
       child: ProgressButton(reveal),
     );
   }
